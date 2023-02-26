@@ -2,7 +2,7 @@
 
 
 select 
-    locationid, 
+    CAST(locationid AS integer) locationid, 
     borough, 
     zone, 
     replace(service_zone,'Boro','Green') as service_zone
