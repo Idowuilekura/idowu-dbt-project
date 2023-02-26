@@ -12,8 +12,7 @@ WITH all_fhv_data AS (
 
 
 SELECT 
-    afd.primary_key,
-    afd.ispatching_base_num,
+    afd.dispatching_base_num,
     afd.pickup_datetime,
     afd.dropoff_datetime,
     afd.SR_flag store_and_fwd_flag,
@@ -24,6 +23,6 @@ SELECT
     
     FROM all_fhv_data afd
     INNER JOIN dim_zones as pickup_zone 
-    ON afd.pickup_locationid = pickup_zone.locationid
+    ON afd.pickup_location_id = pickup_zone.locationid
     INNER JOIN dim_zones as dropoff_zone 
-    ON afd.dropoff_locationid = dropoff_zone.locationid
+    ON afd.dropoff_location_id = dropoff_zone.locationid
